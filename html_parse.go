@@ -7,6 +7,14 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
+type PageData struct {
+	URL            string   `json:"url"`
+	Heading        string   `json:"heading"`
+	FirstParagraph string   `json:"first_paragraph"`
+	OutgoingLinks  []string `json:"outgoing_links"`
+	ImageURLs      []string `json:"image_urls"`
+}
+
 func normalizeURL(urlStr string) (string, error) {
 	parsedURL, err := url.Parse(urlStr)
 	if err != nil {
